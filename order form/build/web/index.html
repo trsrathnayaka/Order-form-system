@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Simple Order Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            
+                    html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+        background-image: url("2.gif");
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+  h1 {
+        top: 30%;
+        font-size: 3em;
+        text-align: center;
+        color: yellow;
+        max-width: 1500px;
+ 
+            }
+
+h6{
+    
+        top: 60%;
+        font-size: 1.3em;
+        text-align: center;
+        color: white;
+        max-width: 1500px;
+    
+}
+
+table {
+	width: 800px;
+        height: 300px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: inset .2em .1em gold;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba( 2, 0, 22, 0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+
+  .button-1{
+  
+  width: 250px;
+  height: 40px;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.button-1::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-1 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-1:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+          
+        </style>
+       
+    </head>
+   
+    <body>
+        
+        <h1>ORDER FORM</h1>
+        <h6>What Would You Like To Purchase?</h6>
+        
+        <form action="oder.jsp" method="POST">
+            <div class ="container">
+                
+                <table border ="1">
+                    
+                    <thead>
+                        <tr>
+                            <th>ITEM</th>
+                            <th>QUANTITY</th>
+                            <th>UNIT PRICE</th>
+                            
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td>T SHIRTS</td>
+                            <td><input type="text" name="tqty" value="" /> </td>
+                            <td>@ 15.00 USD </td>
+                        </tr>
+                        
+                        
+                         <tr>
+                            <td>HATS</td>
+                            <td><input type="text" name="hqty" value="" /> </td>
+                            <td>@ 10.00 USD </td>
+                        </tr>
+                        
+                        <tr>
+                            <td> <button class="button-1" type="submit" role="button">PLACE ORDER</button></td>
+                            <td> <button class="button-1" type="reset" role="button">CLEAR FIELD</button></td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </form>
+       
+    </body>
+</html>
